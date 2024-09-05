@@ -9,7 +9,7 @@ import os
 load_dotenv()
 # Initializing Environmental Variables
 # load_dotenv(dotenv_path="backend/.env")
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+SQLALCHEMY_DATABASE_URL = os.getenv("MY_DATABASE_URL")
 
 # === Create SQLAlchemy Engine ===
 # The engine is the core interface to the database in SQLAlchemy.
