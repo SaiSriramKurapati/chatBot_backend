@@ -29,9 +29,11 @@ import crud  # CRUD operations for database access
 load_dotenv() 
 
 # Initializing Environmental Variables
-SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('POSTGRES_HOST')}/{os.getenv('POSTGRES_DB')}"
+# SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('POSTGRES_HOST')}/{os.getenv('POSTGRES_DB')}"
+
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 redis_url               = os.getenv('REDIS_URL')
-client                  = OpenAI(api_key=os.getenv('REDIS_URL'))
+client                  = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 # === Initialize Redis Client for Caching ===
 # Set up Redis client to cache chatbot responses.

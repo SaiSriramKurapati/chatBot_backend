@@ -9,7 +9,7 @@ import os
 load_dotenv()
 # Initializing Environmental Variables
 # load_dotenv(dotenv_path="backend/.env")
-SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('POSTGRES_HOST')}/{os.getenv('POSTGRES_DB')}"
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
 # === Create SQLAlchemy Engine ===
 # The engine is the core interface to the database in SQLAlchemy.
